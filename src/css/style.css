@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap');
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-/*# sourceMappingURL=style.css.map */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.first-page {
+  background-color: #222020;
+  color: white;
+}
+
+.second-page {
+  background-color: #c55454;
+  color: white;
+}
