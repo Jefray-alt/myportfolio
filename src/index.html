@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Jeffrey France</title>
   </head>
   <body>
+    <nav class="main-navbar">
+      <div class="container">
+        <div class="icon">
+          <img src="./img/logo.svg" class="img-logo" alt="logo" />
+        </div>
+        <div class="nav-item-list">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#page-1" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#page-1" class="nav-link">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a href="#page-1" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#page-1" class="nav-link">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div id="page-container">
-      <div data-anchor="Page 1" class="first-page">Hello World</div>
+      <div data-anchor="Page 1" class="first-page">
+        <div class="bg-container">
+          <ul id="scene-bg">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container">
+            <h1 class="display-1">HELLO.</h1>
+            <p>
+              I'm Jeffrey France, a Junior Front-End Developer based on Sta.
+              Rosa, Laguna. I am looking for opportunities to gain new
+              experience. If you're interested in what I can do, you can check
+              my projects below.
+            </p>
+            <div class="cta">
+              <a href="#page-3" class="btn btn-primary">See my Projects!</a>
+              <a href="./img/file.svg" download class="btn btn-primary-outline"
+                >Download my Résumé!</a
+              >
+            </div>
+          </div>
+          <div class="right-container">
+            <ul id="sub-scene-1">
+              <li class="layer" data-depth="0.2">
+                <img src="./img/e1.svg" alt="layer-1" class="spotlight move" />
+              </li>
+              <li class="layer" data-depth="0.3">
+                <img src="./img/e2.svg" alt="layer-1" class="spotlight move" />
+              </li>
+              <li class="layer" data-depth="0.4">
+                <img src="./img/e3.svg" alt="layer-1" class="spotlight move" />
+              </li>
+              <li class="layer" data-depth="0.1">
+                <img
+                  src="./img/illustration.svg"
+                  alt="proj1"
+                  class="spotlight move"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div data-anchor="Page 2" class="second-page">I lab yu</div>
     </div>
   </body>
