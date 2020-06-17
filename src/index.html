@@ -6,8 +6,9 @@
     <title>Jeffrey France</title>
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="main-navbar">
-      <div class="container">
+      <!-- <div class="container nav-md">
         <div class="icon">
           <img src="./img/logo.svg" class="img-logo" alt="logo" />
         </div>
@@ -17,7 +18,7 @@
               <a href="#page-1" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#page-1" class="nav-link">Skills</a>
+              <a href="#page-2" class="nav-link">Skills</a>
             </li>
             <li class="nav-item">
               <a href="#page-1" class="nav-link">Projects</a>
@@ -27,17 +28,42 @@
             </li>
           </ul>
         </div>
+      </div> -->
+
+      <div class="container nav-sm">
+        <div class="nav-icon-container">
+          <div class="nav-icon"></div>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <img src="./img/logo.svg" alt="logo" />
+          </li>
+          <li class="nav-item">
+            <a href="#page-1" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#page-2" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#page-3" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#page-4" class="nav-link">Contact Me</a>
+          </li>
+        </ul>
       </div>
     </nav>
+
     <div id="page-container">
-      <div data-anchor="Page 1" class="first-page">
+      <div data-anchor="Page 1" class="first-page proj1-bg">
         <div class="bg-container">
-          <ul id="scene-bg">
+          <ul id="scene-bg-1">
             <li class="layer" data-depth="0.3">
               <img src="./img/bg.svg" alt="background" />
             </li>
           </ul>
         </div>
+        <!-- First Page -->
         <div class="content">
           <div class="left-container">
             <h1 class="display-1">HELLO.</h1>
@@ -55,28 +81,371 @@
             </div>
           </div>
           <div class="right-container">
-            <ul id="sub-scene-1">
+            <ul id="sub-scene-1" class="scene-list">
               <li class="layer" data-depth="0.2">
-                <img src="./img/e1.svg" alt="layer-1" class="spotlight move" />
+                <img
+                  src="./img/e1.svg"
+                  alt="layer-1"
+                  class="layer-2 spotlight move"
+                />
               </li>
               <li class="layer" data-depth="0.3">
-                <img src="./img/e2.svg" alt="layer-1" class="spotlight move" />
+                <img
+                  src="./img/e2.svg"
+                  alt="layer-1"
+                  class="layer-3 spotlight move"
+                />
               </li>
               <li class="layer" data-depth="0.4">
-                <img src="./img/e3.svg" alt="layer-1" class="spotlight move" />
+                <img
+                  src="./img/e3.svg"
+                  alt="layer-1"
+                  class="layer-4 spotlight move"
+                />
               </li>
               <li class="layer" data-depth="0.1">
                 <img
                   src="./img/illustration.svg"
                   alt="proj1"
-                  class="spotlight move"
+                  class="layer-1 spotlight move"
                 />
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div data-anchor="Page 2" class="second-page">I lab yu</div>
+      <!-- Second Page -->
+      <div data-anchor="Page 2" class="second-page">
+        <div class="bg-container">
+          <ul id="scene-bg-2" class="scene-bg">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-bg proj1-text">
+            <h2 class="display-2">SKILLS</h2>
+            <p>
+              As a student, I was fascinated by looking at designs whether it is
+              UI or Illustration. To fuse my love with arts and programming, I
+              decided to focus more on Front-End development since both of them
+              have something in common. I am currently learning Reactjs and
+              hoping to improve myself in Front-End Development by gaining
+              experience.
+            </p>
+          </div>
+          <div class="right-container">
+            <div class="container">
+              <div class="category">
+                <h2 class="display-1-simple proj1-text d-none d-block-sm">
+                  Skills
+                </h2>
+                <h3 class="display-1-simple">Front-End Technologies</h3>
+                <ul class="tech-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>Bootstrap</li>
+                  <li>Sass</li>
+                  <li>Sass</li>
+                  <li>React/Redux</li>
+                </ul>
+              </div>
+              <div class="category">
+                <h3 class="display-1-simple">Back-End/Database Technologies</h3>
+                <ul class="tech-list">
+                  <li>ASP.NET/MVC</li>
+                  <li>Node.js/Express.js</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+              <div class="category">
+                <h3 class="display-1-simple">Others</h3>
+                <ul class="tech-list">
+                  <li>Git</li>
+                  <li>Adobe Photoshop</li>
+                  <li>Adobe XD</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Third Page -->
+      <div class="third-page proj1-bg" data-anchor="Page 3">
+        <div class="bg-container">
+          <ul id="scene-bg-3">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-bg proj1-text">
+            <h3 class="heading light-text">project #1</h3>
+            <h1 class="display-2-simple">PHOTOSPLASH</h1>
+            <p class="sub-heading">HTML, CSS, Javascript, React, Redux</p>
+            <p>
+              A react app using Unsplash API. It allows the user search and view
+              photos from Unsplash.
+            </p>
+            <div class="cta">
+              <a href="#page-3" class="btn btn-proj1">Live Site</a>
+              <a href="!#" class="btn btn-proj1-outline">View Code</a>
+            </div>
+          </div>
+          <div class="right-container">
+            <ul id="sub-scene-2" class="scene-list">
+              <li class="layer" data-depth="0.2">
+                <img
+                  src="./img/e1.svg"
+                  alt="layer-1"
+                  class="layer-2 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.3">
+                <img
+                  src="./img/e2.svg"
+                  alt="layer-1"
+                  class="layer-3 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.4">
+                <img
+                  src="./img/e3.svg"
+                  alt="layer-1"
+                  class="layer-4 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.1">
+                <img
+                  src="./img/proj1.svg"
+                  alt="proj1"
+                  class="layer-1 spotlight move"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Fourth Page -->
+      <div class="fourth-page proj2-bg" data-anchor="Page 4">
+        <div class="bg-container">
+          <ul id="scene-bg-4">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-bg proj2-text">
+            <h3 class="heading light-text">project #2</h3>
+            <h1 class="display-2-simple">FLASH QUIZ</h1>
+            <p class="sub-heading">HTML, CSS, Javascript, React, Redux</p>
+            <p>
+              A quiz react app that uses a third-party API and lets you take
+              quizzes on different categories
+            </p>
+            <div class="cta">
+              <a href="#page-3" class="btn btn-proj2">Live Site</a>
+              <a href="!#" class="btn btn-proj2-outline">View Code</a>
+            </div>
+          </div>
+          <div class="right-container">
+            <ul id="sub-scene-3" class="scene-list">
+              <li class="layer" data-depth="0.2">
+                <img
+                  src="./img/e1.svg"
+                  alt="layer-1"
+                  class="layer-2 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.3">
+                <img
+                  src="./img/e2.svg"
+                  alt="layer-1"
+                  class="layer-3 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.4">
+                <img
+                  src="./img/e3.svg"
+                  alt="layer-1"
+                  class="layer-4 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.1">
+                <img
+                  src="./img/proj1.svg"
+                  alt="proj1"
+                  class="layer-1 spotlight move"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Fifth Page -->
+      <div class="fifth-page proj3-bg" data-anchor="Page 5">
+        <div class="bg-container">
+          <ul id="scene-bg-5">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-bg proj3-text">
+            <h3 class="heading light-text">project #3</h3>
+            <h1 class="display-2-simple">TLOZ: BOTW STATIC SITE</h1>
+            <p class="sub-heading">HTML, CSS, JS</p>
+            <p>
+              A website where I tried parallax effects and trained my web
+              designing skills. The website was made with different JS libraries
+              such as jQuery, Slick.js, and Rellax.js
+            </p>
+            <div class="cta">
+              <a href="#page-3" class="btn btn-proj3">Live Site</a>
+              <a href="!#" class="btn btn-proj3-outline">View Code</a>
+            </div>
+          </div>
+          <div class="right-container">
+            <ul id="sub-scene-4" class="scene-list">
+              <li class="layer" data-depth="0.2">
+                <img
+                  src="./img/e1.svg"
+                  alt="layer-1"
+                  class="layer-2 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.3">
+                <img
+                  src="./img/e2.svg"
+                  alt="layer-1"
+                  class="layer-3 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.4">
+                <img
+                  src="./img/e3.svg"
+                  alt="layer-1"
+                  class="layer-4 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.1">
+                <img
+                  src="./img/proj1.svg"
+                  alt="proj1"
+                  class="layer-1 spotlight move"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Sixth Page -->
+      <div class="sixth-page proj4-bg" data-anchor="Page 6">
+        <div class="bg-container">
+          <ul id="scene-bg-6">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-bg proj4-text">
+            <h3 class="heading light-text">project #4</h3>
+            <h1 class="display-2-simple">WOOFER</h1>
+            <p class="sub-heading">HTML, CSS, JS, React</p>
+            <p>
+              React Application based on the Spotify Web API. It allows the user
+              to search and analyze songs. For this app I used Context API
+              instead of using Redux in order to change things up a bit.
+            </p>
+            <div class="cta">
+              <a href="#page-3" class="btn btn-proj4">Live Site</a>
+              <a href="!#" class="btn btn-proj4-outline">View Code</a>
+            </div>
+          </div>
+          <div class="right-container">
+            <ul id="sub-scene-5" class="scene-list">
+              <li class="layer" data-depth="0.2">
+                <img
+                  src="./img/e1.svg"
+                  alt="layer-1"
+                  class="layer-2 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.3">
+                <img
+                  src="./img/e2.svg"
+                  alt="layer-1"
+                  class="layer-3 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.4">
+                <img
+                  src="./img/e3.svg"
+                  alt="layer-1"
+                  class="layer-4 spotlight move"
+                />
+              </li>
+              <li class="layer" data-depth="0.1">
+                <img
+                  src="./img/proj1.svg"
+                  alt="proj1"
+                  class="layer-1 spotlight move"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="seventh-page extra-bg" data-anchor="Page 7">
+        <div class="bg-container">
+          <ul id="scene-bg-7">
+            <li class="layer" data-depth="0.3">
+              <img src="./img/bg.svg" alt="background" />
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="left-container secondary-text">
+            <h1 class="display-2-simple">CONTACT ME</h1>
+            <ul class="link-list">
+              <li class="link-item">
+                <a href="!#" class="link"
+                  ><img
+                    src="./img/gmail.svg"
+                    alt="gmail"
+                  />france.jeffreyb@gmail.com</a
+                >
+              </li>
+              <li class="link-item">
+                <a href="!#" class="link"
+                  ><img src="./img/linkedin.svg" alt="gmail" />jbfrance</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="right-container">
+            <h1 class="display-2-simple">MY RESOURCES</h1>
+            <ul class="link-list">
+              <li class="link-item">
+                <a href="!#" class="link"
+                  ><img src="./img/git.svg" alt="gmail" />Jefray-alt</a
+                >
+              </li>
+              <li class="link-item">
+                <a href="!#" download class="link"
+                  ><img src="./img/file.svg" alt="gmail" />Résumé</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
