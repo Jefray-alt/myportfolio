@@ -40,11 +40,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          'file-loader?name=[hash].[ext]&outputPath=img/&publicPath=img/',
-          'image-webpack-loader',
-        ],
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        use: ['file-loader?name=[hash].[ext]&outputPath=img/&publicPath=img/'],
       },
       {
         test: /\.html$/,
@@ -69,6 +66,7 @@ module.exports = {
       filename: 'index.html',
       title: 'Hello World',
       template: 'src/index.html',
+      favicon: './src/img/favicon.ico',
     }),
   ],
 };

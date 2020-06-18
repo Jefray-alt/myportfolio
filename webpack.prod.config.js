@@ -1,4 +1,6 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,23 +9,25 @@ module.exports = {
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].bundle.js',
+    publicPath: '',
+    path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production',
-  // optimazation: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     minSize: 10000,
-  //     automaticNameDelimiter: '_',
-  //   },
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 10000,
+      automaticNameDelimiter: '_',
+    },
+  },
   module: {
     rules: [
-      //   { test: /\(.png|jpg)$/, use: ['file-loader'] },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
       {
         test: /\.s[ac]ss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'resolve-url-loader',
           {
@@ -35,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         use: [
           'file-loader?name=[hash].[ext]&outputPath=img/&publicPath=img/',
           'image-webpack-loader',
@@ -59,11 +63,16 @@ module.exports = {
     ],
   },
   plugins: [
+    new TerserPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      title: 'Hello World',
+      vendor: ['vendors~index'],
       template: 'src/index.html',
+      favicon: './src/img/favicon.ico',
     }),
   ],
 };
