@@ -1,5 +1,5 @@
 import Parallax from 'parallax-js';
-export function init() {
+export default function () {
   // Bg Parallax
   const scenebg1 = new Parallax(document.querySelector('#scene-bg-1'));
   const scenebg2 = new Parallax(document.querySelector('#scene-bg-2'));

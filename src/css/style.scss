@@ -34,6 +34,7 @@ a {
 }
 
 p {
+  display: inline-block;
   line-height: 1.2;
 }
 
@@ -99,12 +100,10 @@ ul {
   display: none;
 }
 
-.display-1,
-.display-2 {
-  position: relative;
-  font-size: 245px;
-  letter-spacing: 25px;
-  &::before {
+.first-page .letter {
+  display: inline-block;
+  opacity: 0;
+  &:first-child::before {
     content: '';
     position: absolute;
     top: -40px;
@@ -116,6 +115,14 @@ ul {
     background-position: center;
     background-image: url(../img/path.svg);
   }
+}
+
+.display-1,
+.display-2 {
+  display: inline-block;
+  position: relative;
+  font-size: 245px;
+  letter-spacing: 25px;
 }
 
 .heading {
@@ -131,10 +138,12 @@ ul {
 .display-2 {
   font-size: 100px;
   letter-spacing: 15px;
-  &::before {
-    background-size: 50px;
-    left: -25px;
-    top: -50px;
+  .letter {
+    &::before {
+      background-size: 50px;
+      left: -25px;
+      top: -50px;
+    }
   }
 }
 
@@ -162,7 +171,7 @@ ul {
   color: #fffaff;
   width: fit-content;
   display: inline-block;
-  transition: all 0.5s;
+  transition: box-shadow 0.5s;
   &.btn-primary {
     background-color: $primary;
     color: $proj1;
@@ -356,6 +365,7 @@ ul {
           position: absolute;
           width: 100%;
           background-color: #fffaff;
+          min-height: -webkit-fill-available;
           height: 100vh;
           top: 0;
           left: 0;
@@ -373,6 +383,21 @@ ul {
             .nav-link {
               font-size: 1.5rem;
               color: $proj1;
+              position: relative;
+              &::before {
+                position: absolute;
+                bottom: -10px;
+                content: '';
+                width: 0%;
+                background-color: $primary;
+                height: 5px;
+                transition: width 0.5s;
+              }
+              &:hover {
+                &::before {
+                  width: 100%;
+                }
+              }
             }
           }
 
@@ -403,9 +428,14 @@ ul {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      transform: scale(0.9);
+      transition: transform 0.5s;
       color: $secondary;
       * {
         margin-bottom: 10px;
+      }
+      &:hover {
+        transform: scale(1);
       }
     }
   }
@@ -421,10 +451,23 @@ ul {
   overflow: hidden;
   position: relative;
   display: flex;
+
+  &.pg-active .content .left-container * {
+    opacity: 1;
+  }
+  & .content .left-container * {
+    opacity: 0;
+  }
 }
 
 .seventh-page {
   text-align: center;
+  &.pg-active .content * {
+    opacity: 1;
+  }
+  & .content * {
+    opacity: 0;
+  }
   .content {
     .right-container {
       display: flex;
@@ -438,6 +481,9 @@ ul {
 .second-page {
   background-color: #c55454;
   color: white;
+  .letter {
+    display: inline-block;
+  }
   .bg-container {
     img {
       transform: rotate(120deg);

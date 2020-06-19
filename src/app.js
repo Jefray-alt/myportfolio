@@ -1,7 +1,7 @@
 import './css/style.scss';
 import './css/responsive.scss';
-import { init as parallax } from './js/parallax-effect.js';
-import { init as pageable } from './js/pageable-effect.js';
+import parallax from './js/parallax-effect.js';
+import pageable from './js/pageable-effect.js';
 
 // Hamburger Code
 const burger = document.querySelector('.nav-icon-container');

@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animejs": "^3.2.0",
     "pageable": "^0.6.8",
     "parallax-js": "^3.1.0",
     "webpack": "^4.43.0",

@@ -2,10 +2,12 @@
   .content {
     .left-container {
       .display-1 {
-        &::before {
-          left: 0;
+        font-size: 180px;
+        .letter {
+          &:first-child::before {
+            left: -5px;
+          }
         }
-        font-size: 200px;
       }
     }
     .right-container {
@@ -29,12 +31,14 @@
   .content {
     .left-container {
       .display-1 {
-        &::before {
-          background-size: 60px;
-          left: -15px;
-          top: -45px;
-        }
         font-size: 140px;
+        .letter {
+          &:first-child::before {
+            background-size: 60px;
+            left: -15px;
+            top: -45px;
+          }
+        }
       }
     }
     .right-container {
@@ -90,12 +94,13 @@
         width: 100%;
         .display-1 {
           font-size: 140px;
-          &::before {
-            background-size: 50px;
-            left: -15px;
-            top: -45px;
+          .letter {
+            &:first-child::before {
+              background-size: 50px;
+              left: -15px;
+              top: -45px;
+            }
           }
-          font-size: 140px;
         }
         p {
           width: 100%;
@@ -122,7 +127,18 @@
   }
 }
 @media screen and (max-width: 850px) {
-  .second-page {
+  .first-page {
+    .content {
+      .left-container {
+        .cta {
+          .btn {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+  .btn .second-page {
     .content {
       .left-container {
         display: none;
