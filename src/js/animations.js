@@ -94,7 +94,7 @@ export function seventhPageAnimations() {
   anime({
     targets: '.seventh-page .content div',
     opacity: [0, 1],
-    delay: (el, i) => 100 * i,
+    delay: (el, i) => 200 * i,
   });
 }
 
