@@ -1,4 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
+import { remove } from 'animejs';
 
 const nodes = [
   '.first-page .content .left-container .display-1',
@@ -11,6 +12,7 @@ const nodes = [
   '.fifth-page .content .left-container .display-2-simple',
   '.sixth-page .content .left-container .heading',
   '.sixth-page .content .left-container .display-2-simple',
+  '.preloader p',
 ];
 
 export function convertNodes() {
@@ -88,14 +90,31 @@ export function fifthPageAnimations() {
 export function sixthPageAnimations() {
   repeatingAnimations(nodes[8], nodes[9], '.sixth-page');
 }
-
-export function seventhPageAnimations() {
-  anime.remove('.seventh-page .content div');
-  anime({
-    targets: '.seventh-page .content div',
-    opacity: [0, 1],
-    delay: (el, i) => 200 * i,
+export function preloaderAnimation() {
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      document.querySelector('.preloader').classList.add('preloader-finish');
+      anime.remove('.preloader .letter');
+    }, 3000);
   });
+  anime
+    .timeline({ loop: true })
+    .add({
+      targets: '.preloader  .letter',
+      translateX: [30, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      delay: (el, i) => 200 * i,
+    })
+    .add({
+      targets: '.preloader .letter',
+      translateX: [0, -30],
+      translateZ: 0,
+      opacity: [1, 0],
+      easing: 'easeOutExpo',
+      delay: (el, i) => 200 * i,
+    });
 }
 
 function repeatingAnimations(node1, node2, classPage) {
@@ -115,7 +134,7 @@ function repeatingAnimations(node1, node2, classPage) {
         easing: 'easeOutExpo',
         delay: (el, i) => 50 * i,
       },
-      1
+      350
     )
     .add(
       {
@@ -125,7 +144,7 @@ function repeatingAnimations(node1, node2, classPage) {
         opacity: [0, 1],
         delay: (el, i) => 100 * i,
       },
-      1
+      400
     )
     .add(
       {
@@ -134,7 +153,7 @@ function repeatingAnimations(node1, node2, classPage) {
         translateZ: 0,
         opacity: [0, 1],
       },
-      1
+      450
     )
     .add(
       {
@@ -143,7 +162,7 @@ function repeatingAnimations(node1, node2, classPage) {
         translateZ: 0,
         opacity: [0, 1],
       },
-      1
+      500
     )
     .add(
       {
@@ -153,7 +172,7 @@ function repeatingAnimations(node1, node2, classPage) {
         opacity: [0, 1],
         delay: (el, i) => 50 * i,
       },
-      1
+      550
     );
 }
 

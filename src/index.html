@@ -6,6 +6,10 @@
     <title>Jeffrey France</title>
   </head>
   <body>
+    <div class="preloader">
+      <img src="./img/logo-alt.svg" class="img-preloader" alt="logo" />
+      <p>loading...</p>
+    </div>
     <!-- Navbar -->
     <nav class="main-navbar">
       <!-- <div class="container nav-md">
@@ -39,23 +43,24 @@
             <img src="./img/logo.svg" alt="logo" />
           </li>
           <li class="nav-item">
-            <a href="#page-1" class="nav-link">Home</a>
+            <a href="#page1" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#page-2" class="nav-link">Skills</a>
+            <a href="#page2" class="nav-link">Skills</a>
           </li>
           <li class="nav-item">
-            <a href="#page-3" class="nav-link">Projects</a>
+            <a href="#page3" class="nav-link">Projects</a>
           </li>
           <li class="nav-item">
-            <a href="#page-7" class="nav-link">Contact Me</a>
+            <a href="#page7" class="nav-link">Contact Me</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div id="page-container">
-      <div data-anchor="Page 1" class="first-page proj1-bg">
+    <div id="pagepiling">
+      <!-- First -->
+      <div class="section first-page" data-anchor="page1">
         <div class="bg-container">
           <ul id="scene-bg-1">
             <li class="layer" data-depth="0.3">
@@ -63,7 +68,6 @@
             </li>
           </ul>
         </div>
-        <!-- First Page -->
         <div class="content">
           <div class="left-container">
             <h1 class="display-1">HELLO.</h1>
@@ -76,7 +80,7 @@
               </p>
             </div>
             <div class="cta">
-              <a href="#page-3" class="btn btn-primary">See my Projects!</a>
+              <a href="#page3" class="btn btn-primary">See my Projects!</a>
               <a href="!#" download class="btn btn-primary-outline"
                 >Download my Résumé!</a
               >
@@ -117,7 +121,7 @@
         </div>
       </div>
       <!-- Second Page -->
-      <div data-anchor="Page 2" class="second-page">
+      <div class="section second-page" data-anchor="page2">
         <div class="bg-container">
           <ul id="scene-bg-2" class="scene-bg">
             <li class="layer" data-depth="0.3">
@@ -175,7 +179,7 @@
         </div>
       </div>
       <!-- Third Page -->
-      <div class="third-page proj1-bg" data-anchor="Page 3">
+      <div class="third-page section" data-anchor="page3">
         <div class="bg-container">
           <ul id="scene-bg-3">
             <li class="layer" data-depth="0.3">
@@ -248,7 +252,7 @@
         </div>
       </div>
       <!-- Fourth Page -->
-      <div class="fourth-page proj2-bg" data-anchor="Page 4">
+      <div class="fourth-page section" data-anchor="page4">
         <div class="bg-container">
           <ul id="scene-bg-4">
             <li class="layer" data-depth="0.3">
@@ -321,7 +325,7 @@
         </div>
       </div>
       <!-- Fifth Page -->
-      <div class="fifth-page proj3-bg" data-anchor="Page 5">
+      <div class="fifth-page section" data-anchor="page5">
         <div class="bg-container">
           <ul id="scene-bg-5">
             <li class="layer" data-depth="0.3">
@@ -395,7 +399,7 @@
         </div>
       </div>
       <!-- Sixth Page -->
-      <div class="sixth-page proj4-bg" data-anchor="Page 6">
+      <div class="sixth-page section" data-anchor="page6">
         <div class="bg-container">
           <ul id="scene-bg-6">
             <li class="layer" data-depth="0.3">
@@ -468,7 +472,8 @@
           </div>
         </div>
       </div>
-      <div class="seventh-page extra-bg" data-anchor="Page 7">
+      <!-- Seventh Page -->
+      <div class="seventh-page section" data-anchor="page7">
         <div class="bg-container">
           <ul id="scene-bg-7">
             <li class="layer" data-depth="0.3">

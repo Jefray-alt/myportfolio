@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "animejs": "^3.2.0",
+    "jquery": "^3.5.1",
     "pageable": "^0.6.8",
+    "pagepiling.js": "^1.5.6",
     "parallax-js": "^3.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"

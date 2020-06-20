@@ -16,7 +16,6 @@ $extra: #4e717d;
 
 body {
   font-family: 'Lucida Console', Monaco, monospace;
-  position: relative;
 }
 
 h1,
@@ -121,7 +120,7 @@ ul {
 .display-2 {
   display: inline-block;
   position: relative;
-  font-size: 245px;
+  font-size: 225px;
   letter-spacing: 25px;
 }
 
@@ -277,7 +276,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     &.nav {
       &-md {
         visibility: visible;
@@ -416,6 +415,33 @@ ul {
 }
 
 // Page Styles
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #c55454;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: z-index 0.5s, opacity 0.5s;
+  z-index: 200;
+  text-transform: uppercase;
+  .img-preloader {
+    margin-bottom: 20px;
+  }
+  &.preloader-finish {
+    opacity: 0;
+    z-index: -1;
+  }
+  .letter {
+    display: inline-block;
+  }
+}
+
 .link-list {
   display: flex;
   flex-direction: column;
@@ -452,23 +478,34 @@ ul {
   position: relative;
   display: flex;
 
-  &.pg-active .content .left-container * {
+  &.active .content .left-container * {
     opacity: 1;
   }
   & .content .left-container * {
     opacity: 0;
+    transition: opacity 0.5s;
   }
 }
 
 .seventh-page {
   text-align: center;
-  &.pg-active .content * {
+  &.active .content * {
     opacity: 1;
   }
   & .content * {
     opacity: 0;
+    transition: opacity 0.5s;
   }
   .content {
+    .left-container {
+      .link-list {
+        .link-item {
+          .link {
+            transition: transform 0.5s;
+          }
+        }
+      }
+    }
     .right-container {
       display: flex;
       justify-content: center;

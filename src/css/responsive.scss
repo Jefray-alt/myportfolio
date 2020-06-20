@@ -31,7 +31,7 @@
   .content {
     .left-container {
       .display-1 {
-        font-size: 140px;
+        font-size: 120px;
         .letter {
           &:first-child::before {
             background-size: 60px;
@@ -61,7 +61,7 @@
   .content {
     .left-container {
       .display-1 {
-        font-size: 140px;
+        font-size: 100px;
       }
       p {
         width: 100%;
@@ -130,6 +130,7 @@
   .first-page {
     .content {
       .left-container {
+        padding: 0 1.8rem;
         .display-1 {
           .letter {
             &:first-child::before {
@@ -147,7 +148,7 @@
       }
     }
   }
-  .btn .second-page {
+  .second-page {
     .content {
       .left-container {
         display: none;
@@ -169,6 +170,22 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      * {
+        padding: 0 0.6rem;
+      }
+      .display-2-simple {
+        font-size: 18px;
+      }
+
+      .link-list {
+        .link-item {
+          .link {
+            img {
+              height: 30px;
+            }
+          }
+        }
+      }
     }
   }
   .third-page,
@@ -179,6 +196,7 @@
       .left-container {
         width: 100%;
         text-align: center;
+        padding: 0 0.6rem;
       }
       .right-container {
         display: none;
@@ -199,5 +217,45 @@
         justify-content: flex-end;
       }
     }
+  }
+  #pp-nav {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 340px) {
+  .first-page {
+    .content {
+      .left-container {
+        padding: 0 0.8rem;
+        .display-1 {
+          .letter {
+            &:first-child::before {
+              left: -27px;
+            }
+          }
+          letter-spacing: 10px;
+          font-size: 90px;
+        }
+        .cta {
+          .btn {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+  .second-page .right-container .container .category {
+    margin: 15px 0;
+  }
+  .main-navbar .container {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content .left-container {
+    max-width: 320px;
+    height: 100%;
   }
 }
