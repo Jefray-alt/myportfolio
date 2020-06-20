@@ -3,3 +3,135 @@
 
 @media screen and (max-width: 1530px) and (min-width: 1280px){.content .left-container .display-1{font-size:180px}.content .left-container .display-1 .letter:first-child::before{left:-5px}.content .right-container .layer-1{width:400px}.content .right-container .layer-2{width:450px}.content .right-container .layer-3{width:550px}.content .right-container .layer-4{width:650px}}@media screen and (max-width: 1280px) and (min-width: 1024px){.content .left-container .display-1{font-size:120px}.content .left-container .display-1 .letter:first-child::before{background-size:60px;left:-15px;top:-45px}.content .right-container .layer-1{width:300px}.content .right-container .layer-2{width:350px}.content .right-container .layer-3{width:400px}.content .right-container .layer-4{width:500px}}@media screen and (max-width: 1024px){.content .left-container .display-1{font-size:100px}.content .left-container p{width:100%}.content .right-container .layer-1{width:250px}.content .right-container .layer-2{width:300px}.content .right-container .layer-3{width:350px}.content .right-container .layer-4{width:400px}}@media screen and (max-width: 950px){.d-block-sm{display:block}.first-page .content .left-container{width:100%}.first-page .content .left-container .display-1{font-size:140px}.first-page .content .left-container .display-1 .letter:first-child::before{background-size:50px;left:-15px;top:-45px}.first-page .content .left-container p{width:100%}.first-page .content .right-container{display:none}.second-page .content .left-container{display:none}.second-page .content .right-container{width:100%}.second-page .content .right-container .container{width:100%;padding:1rem 1.8rem}}@media screen and (max-width: 850px){.display-1-simple{font-size:18px}.first-page .content .left-container{padding:0 1.8rem}.first-page .content .left-container .display-1{letter-spacing:10px;font-size:90px}.first-page .content .left-container .display-1 .letter:first-child::before{left:-27px}.first-page .content .left-container .cta .btn{margin-bottom:15px}.second-page .content .left-container{display:none}.second-page .content .right-container .container{width:100%;padding:0.2rem 1.8rem;text-align:center}.seventh-page .display-2-simple{font-size:30px}.seventh-page .content{flex-direction:column;justify-content:center;align-items:center}.seventh-page .content *{padding:0 0.6rem}.seventh-page .content .display-2-simple{font-size:18px}.seventh-page .content .link-list .link-item .link img{height:30px}.third-page .content .left-container,.fourth-page .content .left-container,.fifth-page .content .left-container,.sixth-page .content .left-container{width:100%;text-align:center;padding:0 0.6rem}.third-page .content .right-container,.fourth-page .content .right-container,.fifth-page .content .right-container,.sixth-page .content .right-container{display:none}.main-navbar .container.nav-md{display:none;visibility:hidden;opacity:0}.main-navbar .container.nav-sm{visibility:visible;opacity:1;display:flex;justify-content:flex-end}#pp-nav{display:none;visibility:hidden}}@media screen and (max-width: 340px){.first-page .content .left-container{padding:0 0.8rem}.first-page .content .left-container .display-1{letter-spacing:10px;font-size:90px}.first-page .content .left-container .display-1 .letter:first-child::before{left:-27px}.first-page .content .left-container .cta .btn{margin-bottom:15px}.second-page .right-container .container .category{margin:15px 0}.main-navbar .container{padding:0.5rem}}@media screen and (max-width: 320px){.content .left-container{max-width:320px;height:100%}}
 
+/*!
+ * pagepiling.js 1.5.6
+ *
+ * https://github.com/alvarotrigo/pagePiling.js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2016 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html, body {
+    overflow:hidden;
+    margin:0;
+    padding:0;
+
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.pp-section {
+    height:100%;
+    position:absolute;
+    width:100%;
+    
+    /* fixes flickering in firefox*/
+    backface-visibility: hidden; 
+}
+.pp-easing {
+    -webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    /* custom */
+    -webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    /* custom */
+}
+#pp-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#pp-nav.right {
+    right: 17px;
+}
+#pp-nav.left {
+    left: 17px;
+}
+.pp-section.pp-table{
+    display: table;
+}
+.pp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.pp-slidesNav{
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.pp-slidesNav.bottom {
+    bottom: 17px;
+}
+.pp-slidesNav.top {
+    top: 17px;
+}
+#pp-nav ul,
+.pp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#pp-nav li,
+.pp-slidesNav li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.pp-slidesNav li {
+    display: inline-block;
+}
+#pp-nav li a,
+.pp-slidesNav li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#pp-nav li .active span,
+.pp-slidesNav .active span {
+    background: #333;
+}
+#pp-nav span,
+.pp-slidesNav span {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+.pp-tooltip {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    white-space: nowrap;
+    max-width: 220px;
+}
+.pp-tooltip.right {
+    right: 20px;
+}
+.pp-tooltip.left {
+    left: 20px;
+}
+.pp-scrollable{
+    overflow-y: scroll;
+    height: 100%;
+}
+

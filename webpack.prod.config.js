@@ -14,13 +14,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production',
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 10000,
-      automaticNameDelimiter: '_',
-    },
-  },
   module: {
     rules: [
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
@@ -63,19 +56,18 @@ module.exports = {
     ],
   },
   plugins: [
+    new TerserPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
-    new TerserPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      vendor: ['vendors~index'],
       template: 'src/index.html',
       favicon: './src/img/favicon.ico',
     }),
