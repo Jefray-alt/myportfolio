@@ -27,7 +27,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) and (min-width: 1024px) {
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
   .content {
     .left-container {
       .display-1 {
@@ -35,7 +35,7 @@
         .letter {
           &:first-child::before {
             background-size: 60px;
-            left: -15px;
+            left: -17px;
             top: -45px;
           }
         }
@@ -62,6 +62,13 @@
     .left-container {
       .display-1 {
         font-size: 100px;
+        .letter {
+          &::before {
+            background-size: 50px;
+            top: -47px;
+            left: -24px;
+          }
+        }
       }
       p {
         width: 100%;
@@ -127,6 +134,13 @@
   }
 }
 @media screen and (max-width: 850px) {
+  * {
+    cursor: pointer;
+  }
+  .mouse {
+    opacity: 0;
+    visibility: hidden;
+  }
   .display-1-simple {
     font-size: 18px;
   }

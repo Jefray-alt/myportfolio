@@ -12,6 +12,7 @@ $extra: #4e717d;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 body {
@@ -30,6 +31,7 @@ h6 {
 
 a {
   text-decoration: none;
+  z-index: 9;
 }
 
 p {
@@ -170,7 +172,8 @@ ul {
   color: #fffaff;
   width: fit-content;
   display: inline-block;
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s !important;
+  z-index: 9;
   &.btn-primary {
     background-color: $primary;
     color: $proj1;
@@ -266,11 +269,35 @@ ul {
     }
   }
 }
+
+// Cursor styles
+.mouse {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: #e27a7a 2px solid;
+  box-shadow: 3px 3px $proj4;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  margin: auto;
+
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+
+  &.mouse-hovered {
+    transform: scale(2);
+  }
+}
+
 // Nav Styles
 .main-navbar {
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 8;
   transition: all 0.5s;
   .container {
     display: flex;
@@ -319,7 +346,7 @@ ul {
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 20;
+          z-index: 6;
           position: relative;
           box-shadow: 3px 3px $proj1;
           background-color: $proj1;
