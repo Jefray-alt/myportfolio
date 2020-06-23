@@ -222,22 +222,42 @@
   }
   .main-navbar {
     .container.nav {
-      &-md {
-        display: none;
-        visibility: hidden;
-        opacity: 0;
-      }
       &-sm {
         visibility: visible;
         opacity: 1;
         display: flex;
         justify-content: flex-end;
+        .nav-menu {
+          width: 50%;
+          right: -50%;
+          &.enter {
+            right: 0;
+          }
+          &.leave {
+            right: -50%;
+          }
+        }
       }
     }
   }
   #pp-nav {
     display: none;
     visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-navbar .container.nav-sm {
+    .nav-menu {
+      width: 100%;
+      right: -100%;
+      &.enter {
+        right: 0;
+      }
+      &.leave {
+        right: -100%;
+      }
+    }
   }
 }
 @media screen and (max-width: 340px) {
@@ -265,7 +285,7 @@
   .second-page .right-container .container .category {
     margin: 15px 0;
   }
-  .main-navbar .container {
+  .main-navbar .container.nav-sm {
     padding: 0.5rem;
   }
 }

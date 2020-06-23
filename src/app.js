@@ -5,6 +5,7 @@ import pageable from './js/pageable-effect.js';
 
 // Hamburger Code
 const burger = document.querySelector('.nav-icon-container');
+const navscreen = document.querySelector('.nav-screen');
 const navsm = document.querySelector('.nav-sm .nav-menu');
 const navlink = document.querySelectorAll(
   '.nav-sm .nav-menu .nav-item .nav-link'
@@ -13,13 +14,18 @@ const navlink = document.querySelectorAll(
 burger.addEventListener('click', function () {
   burger.classList.toggle('open');
   if (navsm.classList.contains('enter')) {
+    navscreen.classList.add('leave');
     navsm.classList.add('leave');
     navsm.classList.remove('enter');
+    navscreen.classList.remove('enter');
   } else if (navsm.classList.contains('leave')) {
     navsm.classList.add('enter');
     navsm.classList.remove('leave');
+    navscreen.classList.add('enter');
+    navscreen.classList.add('leave');
   } else {
     navsm.classList.add('enter');
+    navscreen.classList.add('enter');
   }
 });
 
@@ -27,6 +33,8 @@ navlink.forEach((element) => {
   element.addEventListener('click', function () {
     navsm.classList.add('leave');
     navsm.classList.remove('enter');
+    navscreen.classList.add('leave');
+    navscreen.classList.remove('enter');
     burger.classList.remove('open');
   });
 });
