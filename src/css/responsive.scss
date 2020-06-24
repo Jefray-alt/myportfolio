@@ -221,8 +221,11 @@
     }
   }
   .main-navbar {
-    .container.nav {
+    .nav {
       &-sm {
+        .nav-icon-container {
+          right: 25px;
+        }
         visibility: visible;
         opacity: 1;
         display: flex;
@@ -247,7 +250,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .main-navbar .container.nav-sm {
+  .main-navbar .nav-sm {
     .nav-menu {
       width: 100%;
       right: -100%;
@@ -285,7 +288,7 @@
   .second-page .right-container .container .category {
     margin: 15px 0;
   }
-  .main-navbar .container.nav-sm {
+  .main-navbar .nav-sm {
     padding: 0.5rem;
   }
 }
